@@ -209,46 +209,94 @@ https://daeun28.github.io/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B3%B5%ED%95%99-%EC%8A%A
   - 컴퓨터 시스템의 핵심 구성 요소로, 프로그램의 명령어를 해석하고 실행하는 역할을 한다.
 
 #### CPU의 구조와 구성 요소 (CPU Architecture and Components)
+![image](/image/cpu.png)
+https://taegyunwoo.github.io/interview/CS_CPU
 - 특징:
   - CPU는 산술 논리장치(ALU, Arithmetic Logic Unit), 제어 장치(CU, Control Unit), 레지스터(Register) 등으로 구성된다.
   - 명령어 사이클을 통해 순서대로 명령어를 처리한다.
+
 ##### 산술 논리 장치(ALU, Arithmetic Logic Unit)
 - 정의: 
-  - 산술 연산(덧셈, 뺄셈 등)과 논리 연산(AND, OR, NOT 등)을 수행합니다.
-- 특징:
-  - 
+  - 산술 연산(덧셈, 뺄셈 등)과 논리 연산(AND, OR, NOT 등)을 수행한다.
+- 기능:
+  - 산술 연산: 덧셈, 뺄셈, 곱셈, 나눗셈 등의 기본적인 수학 연산 수행한다.
+  - 논리 연산: AND, OR, NOT, XOR 등의 논리적 판단을 수행한다.
+  - 비교 연산: 두 값을 비교하여 크기, 같음 등을 판단한다.
 ##### 레지스터 (Registers)
 - 정의: 
-  - 
-- 특징:
-  - 
+  - CPU 내부의 고속 임시 저장소로, 데이터와 명령어를 빠르게 저장하고 접근할 수 있도록 한다.
+- 기능:
+  - 일반 레지스터: 산술 연산의 결과 및 데이터 저장에 사용한다.
+  - 특수 레지스터: 현재 실행 중인 명령어(IR), 다음 실행할 명령어의 주소(PC), 스택의 최상단 주소(SP)를 저장한다.
 ##### 제어 유닛(Control Unit)
 - 정의: 
   - CPU의 다른 구성 요소 간의 작업을 조정하고 명령어의 실행 순서를 제어한다.
-- 특징:
-  - 
+- 기능:
+  - 명령어 해석: 메모리에서 가져온 명령어를 해석하여 어떤 작업을 수행할 지 결정한다.
+  - 제어 신호 생성: ALU, 레지스터, 메모리 등에 제어 신호를 전달한다.
+  - 데이터 흐름 관리: 데이터가 CPU 내부에서 어떻게 흐를 지 조정한다.
 #### 명령어 사이클 (Instruction Cycle)
+- 정의: 
+  - CPU가 프로그램의 명령어를 실행하는 과정.
+##### 명령어 인출(Fetch), 해독(Decode), 실행(Execute), 메모리접근(Memory Access)
+![image](/image/instruction-cycle.png)
+https://www.javatpoint.com/instruction-cycle
+1. 명령어 인출(Fetch)
+   - 정의: 
+     - CPU는 메모리에서 다음 실행할 명령어를 가져온다.
+   - 기능:
+     - PC에 저장된 주소를 사용하여 메모리에서 명령어를 읽어온다.
+     - 읽어온 명령어는 명령어 레지스터(IR)에 저장된다.
+     - PC는 다음 명령어의 주소로 업데이트된다.
 
-##### 명령어 인출(Fetch), 해독(Decode), 실행(Execute), 메모리접근(Memory Access), ...
+2. 해독(Decode)
+   - 정의: 
+     - 가져온 명령어를 해석하여 어떤 작업을 수행할지 결정한다.
+   - 기능:
+     - CU(제어 장치)는 IR에 저장된 명령어를 분석하여 필요한 연산과 데이터를 식별한다.
+     - 명령어에 포함된 오퍼랜드(operand)와 주소 모드를 결정한다.
+3. 실행(Execute)
+   - 정의: 
+     - 해석된 명령어에 따라 실제 연산을 수행한다.
+   - 기능:
+     - ALU(산술 논리 장치)가 산술 연산이나 논리 연산을 수행한다.
+     - 필요한 경우, 메모리에서 데이터를 읽거나 쓰는 작업이 이루어진다.
+     - 연산의 결과는 레지스터 또는 메모리에 저장한다.
+4. 메모리접근(Memory Access)
+   - 정의: 
+     -  연산 결과를 적절한 위치에 저장한다.
+   - 기능:
+     - ALU의 연산 결과가 레지스터나 메모리에 저장한다.
+     - 결과를 사용하는 후속 명령어를 위해 데이터를 준비한다.
 
 #### 메모리 접근 방식 (Memory Access Methods)
 
 ## 메모리 구조 (Memory Architecture)
+
 #### 메모리 계층 구조 (Memory Hierarchy)
+
 #### 캐시 메모리 (Cache Memory)
 
 ##### 직접 매핑(Direct Mapping)
+
 ##### 집합 연관(Set-Associative)
+
 ##### 완전 연관(Fully Associative)
+
 ##### 캐시 적중률(Cache Hit Rate)
 
 #### 가상 메모리 (Virtual Memory)
 
 ##### 페이징(Paging)
+
 ##### 세그멘테이션(Segmentation)
+
 ##### 페이지 교체 알고리즘
-###### LRU
-###### FIFO
+
+###### LRU (Least Recently Used)
+
+###### FIFO (First In First Out)
+
 ###### 최적 교체(Optimal Replacement)
 
 #### TLB (Translation Lookaside Buffer)
@@ -256,13 +304,17 @@ https://daeun28.github.io/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B3%B5%ED%95%99-%EC%8A%A
 ## 입출력 시스템 (I/O Systems)
 
 #### 입출력 장치와 동작 원리 (I/O Devices and Operations)
+
 #### 입출력 제어 방식 (I/O Control Mechanisms)
 
 ##### 프로그램 제어(Programmed I/O)
+
 ##### 인터럽트 방식(Interrupt-driven I/O)
+
 ##### DMA(Direct Memory Access)
 
 #### 인터럽트 (Interrupts)
+
 #### I/O 버스와 데이터 전송 (I/O Bus and Data Transfer)
 
 ## 프로세서 설계 (Processor Design)
@@ -274,18 +326,71 @@ https://daeun28.github.io/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B3%B5%ED%95%99-%EC%8A%A
 ##### 멀티 사이클(Multi-Cycle Design)
 
 #### 파이프라인 처리 (Pipelining)
+
 ##### 파이프라인의 개념과 이점
+
 ##### 위험 요소(Hazards)
+
 
 ## 성능 평가와 최적화 (Performance Evaluation and Optimization)
 
 #### 성능 측정 지표 (Performance Metrics)
-
+- 정의:
+  - 성능이란 실행 시간의 역수로 정의한다.
 ##### 처리량(Throughput), 응답 시간(Response Time), 클럭 주기(Clock Cycle)
+- 정의:
+  - 처리량(Throughput): 단위 시간 당 컴퓨터가 수행하는 작업량
+  - 응답 시간(Response Time): 컴퓨터가 한 작업을 수행하는 데 걸리는 시간
+  - 클럭 주기(Clock Cycle): 한 클럭에 걸리는 시간. ps 단위로 나타냄.
+- 특징:
+  - 처리양을 통해 시스템의 효율성과 성능을 평가한다.
+  - 클럭 속도가 높을 수록 클럭 주기가 짧아지고, CPU가 더 많은 명령어를 처리할 수 있다.
+  - CPU Time은 CPU가 특정 작업을 수행하는 데 소요되는 시간을 뜻하고, Clock Cycle에 Clock Cycle Time을 곱한 값이다.
+  ![image](/image/cputime1.png)
+  https://perfect-occasion.co.kr/entry/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%A0%84%EB%B0%98%EC%A0%81%EC%9D%B8-%EC%86%8C%EA%B0%9C-3-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%84%B1%EB%8A%A5-%ED%96%A5%EC%83%81-%EA%B8%B0%EB%B2%95-CPU-%EC%8B%9C%EA%B0%84-%ED%81%B4%EB%9F%AD-%EC%86%8D%EB%8F%84-CPI-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%88%98-%EC%B5%9C%EC%A0%81%ED%99%94
 
 #### Amdahl의 법칙 (Amdahl's Law)
+![image](/image/amdahl.png)
+https://ko.wikipedia.org/wiki/%EC%95%94%EB%8B%AC%EC%9D%98_%EB%B2%95%EC%B9%99
+- 정의:
+  - 병렬 컴퓨팅에서 성능 향상의 한계를 설명하는 원리로, 특정 작업에서 병렬화할 수 있는 부분과 병렬화할 수 없는 부분의 비율에 따라 전체 성능 향상이 어떻게 제한되는지를 나타낸다.
+- 특징:
+  ![image](/image/amdahl-equation.png)
+  - S는 전체 시스템의 성능 향상 비율이다.
+  - P는 병렬화 가능한 작업의 비율이다 (0과 1 사이의 값).
+  - N은 병렬로 수행할 수 있는 프로세서의 수다.
+  - (1 - P)는 직렬로 실행해야 하는 작업의 비율이다.
 
 #### 시스템 성능 최적화 (System Performance Optimization)
 
 ##### 캐시 최적화(Cache Optimization)
+- 정의:
+  - 캐시 메모리의 성능을 극대화하기 위한 기술
+- 주요 기법:
+1. 캐시 크기 최적화
+   - L1, L2, L3로 여러 단계의 캐시를 사용하여 데이터 접근을 최적화한다.
+   - L1은 가장 빠르고, L3는 가장 큰 용량을 가진다.
+2. 캐시 라인 크기 최적화
+   - 캐시에서 데이터를 저장하는 기본 단위인 캐시 라인의 크기를 최적화한다.
+   - 데이터 구조의 접근 패턴에 맞춰 배열이나 행렬을 설계한다.
+3. 프리페칭(Prefetching)
+   - CPU가 데이터 접근 패턴을 예측하여 미리 데이터를 캐시로 가져오는 것이다.
+   - 데이터가 필요한 시점에 이미 캐시에 존재하게 되어 성능이 향상된다.
+
 ##### 분기 예측(Branch Prediction)
+- 정의:
+  -  조건문이나 분기 명령어의 결과를 미리 예측하여 파이프라인의 흐름을 최적화하는 방법이다.
+- 특징:
+  - 프로그램에서 조건문이나 반복문이 많이 사용되는 만큼, CPU가 다음 명령어의 결과를 예측하여 파이프라인을 채우는 것이 중요하다.
+- 주요 기법:
+1. 고정 예측
+   - 특정 규칙에 따라 분기를 예측하는 방법
+   - Always Taken: 모든 분기를 참으로 예측한다.
+   - Always Not Taken: 모든 분기를 거짓으로 예측한다.
+   - Profile-Guided: 프로그램 실행 전에 분석된 데이터를 기반으로 예측한다.
+
+2. 동적 예측
+   - 실행 중에 분기 결과를 기반으로 예측하는 방법
+   - 히스토리 기반 예측: 이전 분기 결과를 기록하여 다음 분기를 예측
+   - 패턴 기록기: 최근의 분기 결과를 기록하여 유사한 패턴을 기반으로 예측
+   - 지점 예측기: 특정 분기 지점에 대한 예측 정보를 저장.
